@@ -40,12 +40,12 @@ export default function Home({ onNavigate, onSelectServiceForBooking, onSelectMi
       />
 
       {/* Certified Midwives */}
-      <MidwifeSection
+      {/* <MidwifeSection
         onBookWithMidwife={(midwife) => {
           if (onSelectMidwifeForBooking) onSelectMidwifeForBooking(midwife);
           onNavigate('reservation');
         }}
-      />
+      /> */}
 
       {/* Facilities Preview */}
       <FacilitiesPreview

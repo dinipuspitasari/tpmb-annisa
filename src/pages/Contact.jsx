@@ -108,7 +108,7 @@ export default function Contact({ onNavigate }) {
               Lokasi &amp; Akses Fasilitas
             </h3>
             <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-              Klinik berlokasi strategis di lingkungan yang asri, tenang, dan mudah diakses kendaraan roda empat maupun ambulans, dengan area parkir kendaraan yang memadai.
+              Klinik berlokasi di lingkungan yang nyaman dan mudah diakses menggunakan kendaraan pribadi maupun kendaraan roda empat.
             </p>
 
             <div className="space-y-3 pt-2 text-xs">
@@ -124,7 +124,7 @@ export default function Contact({ onNavigate }) {
                 <span className="material-symbols-outlined text-secondary text-[20px] mt-0.5">directions_car</span>
                 <div>
                   <strong className="text-on-surface block">Akses Transportasi:</strong>
-                  <span className="text-on-surface-variant">5 Menit dari Stasiun MRT / Akses Jalan Raya Utama</span>
+                  <span className="text-on-surface-variant">Dapat diakses menggunakan kendaraan pribadi dan kendaraan roda empat melalui akses jalan menuju lokasi.</span>
                 </div>
               </div>
 
@@ -153,16 +153,7 @@ export default function Contact({ onNavigate }) {
           {/* Interactive Map Visual (7 cols on lg) */}
           <div className="lg:col-span-7">
             <div className="relative rounded-2xl overflow-hidden border border-outline-variant/30 h-80 sm:h-96 shadow-inner bg-surface-container-high">
-              <iframe
-                title="Peta Lokasi TPMB ANNISA LL"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.42588145718!2d106.73824765!3d-6.244199999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341aa63bc2!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6476040150096!2d107.2958894747499!3d-6.140373593846547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697f011ab5e841%3A0x3ecbd478e661e586!2sTPMB%20ANNISA%20L%20L!5e1!3m2!1sid!2sid!4v1790262832327!5m2!1sid!2sid" width="100%" height="100%" style={{ border: "0" }} allowFullScreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" />
             </div>
           </div>
 

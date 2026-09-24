@@ -5,7 +5,7 @@ export default function ServiceHighlights() {
   return (
     <section className="py-10 bg-surface-container-low border-y border-outline-variant/30">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin-lg">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {(highlightsData || []).map((item, index) => (
             <div
               key={item?.id ? `stat-id-${item.id}` : `stat-idx-${index}`}

@@ -14,8 +14,8 @@ export const clinicInfo = {
   phoneFormatted: "(0851) 5616-7918",
   whatsapp: "6285156167918",
   hotline: "0812-GENTLE-CARE",
-  address: "Jl. Melati Harapan No. 42, Kebayoran Baru, Jakarta Selatan (Dekat Taman Melati Asri)",
-  mapsQuery: "https://maps.google.com/?q=Kebayoran+Baru+Jakarta+Selatan",
+  address: "Dsn, Jl. Tegal Asem, RT.11/RW.05, Kertasari, Kec. R.Dengklok, Karawang, Jawa Barat 41352",
+  mapsQuery: "https://maps.app.goo.gl/EvRaxeApnyFQqYcZ9",
   heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9vbmBP_3JtX-pt6ENyOgf68LdiLGleXhMbMzZwSe8XZFvPBjb1mpt4my4etv3RAwtr54UD_-s1vxLN3dqi74E6h0MnWRh20rB18lWN-G3alw9tf9TQMmmcgs2xXnheSrJVOJ4PCmXzzw6WLNHAbjS8ttIVYvmM5nbdPL9DJZYqWtk-7VswXYoCnU7Q4k3Ray6pzOCH61fPPzjYG1CuvCtolwiDMZkGn2NRFJ7GP_EJ51hlWkV9NCUSw",
   logoUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VT9GrqdupOf-ekW-2EyE7gWQOLF0Hfs3bzZLSaUORBUj84CrOyxSl-lYl5LEig1R2PcZ3i562QZRqb01ubz6Z5AyYjjFD9tgg4uQBdTqY-8TCd89fFNT7OOfTHydW4ng-DW_qQhtwXMsCG1tVJ8L57zZQ6yh9kx0MZMuZPXDKvMbg1LkqDtWRkE6wFLtnZkQ0LvbNrfcGy609gNjzr5Wf6qdKEZI6Q4N3MbhWR9M3qSausux61JFAWHXSr",
   hours: [
@@ -54,15 +54,6 @@ export const statsData = [
     description: "S.Tr.Keb & Bdn berpengalaman",
     color: "tertiary"
   },
-  {
-    id: 4,
-    icon: "health_and_safety",
-    value: "BPJS",
-    number: "BPJS",
-    label: "Mitra Faskes Resmi",
-    description: "Klaim asuransi mudah & transparan",
-    color: "primary"
-  }
 ];
 
 export const highlights = statsData;
