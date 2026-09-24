@@ -10,7 +10,7 @@ Aplikasi resmi web interaktif untuk **TPMB ANNISA LL** (Tempat Praktik Mandiri B
 - **Tagline:** Sahabat Ibu & Buah Hati
 - **Izin Operasional (SIPB):** 503/SIPB-449/IBI/2023
 - **Akreditasi:** Terakreditasi Paripurna & Mitra Resmi Ikatan Bidan Indonesia (IBI)
-- **Hotline Darurat Bersalin 24 Jam:** 0812-GENTLE-CARE / (0812) 4368-5322
+- **Hotline Darurat Bersalin 24 Jam:** 0812-GENTLE-CARE / (0851) 5616-7918
 - **Alamat:** Jl. Melati Harapan No. 42, Kebayoran Baru, Jakarta Selatan
 
 ---
