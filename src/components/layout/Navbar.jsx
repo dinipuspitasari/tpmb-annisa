@@ -45,9 +45,7 @@ export default function Navbar({ currentPage, onNavigate }) {
           onClick={() => handleNavClick('home')}
           className="flex items-center gap-3 group text-left focus:outline-none"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-fixed/50 text-primary group-hover:scale-105 transition-transform">
-            <span className="material-symbols-outlined text-[24px]">favorite</span>
-          </div>
+         <img src="/images/logo.png" alt="Logo TPMB ANNISA LL" className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight font-bold group-hover:text-primary transition-colors">
               {clinicInfo.name}

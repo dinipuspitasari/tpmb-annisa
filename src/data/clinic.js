@@ -361,7 +361,7 @@ export const midwivesData = [
 export const reviewsData = [
   {
     id: 1,
-    name: "Bunda Dian Kartika",
+    name: "Khivi 48",
     role: "Gentle Birth Normal • Baby Arkan",
     serviceTag: "Gentle Birth",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
@@ -369,8 +369,8 @@ export const reviewsData = [
     avatarBg: "bg-primary-container text-on-primary",
     rating: 5,
     date: "12 Januari 2025",
-    comment: "Awalnya saya takut luar biasa membayangkan proses melahirkan anak pertama. Tapi Bidan di TPMB Annisa LL benar-benar telaten membimbing nafas dan hypnobirthing. Ruangannya sangat tenang, wangi aromaterapi, dan suami boleh mendampingi penuh tanpa rasa panik. Alhamdulillah persalinan normal lancar minim trauma!",
-    quote: "Awalnya saya takut luar biasa membayangkan proses melahirkan anak pertama. Tapi Bidan di TPMB Annisa LL benar-benar telaten membimbing nafas dan hypnobirthing. Ruangannya sangat tenang, wangi aromaterapi, dan suami boleh mendampingi penuh tanpa rasa panik. Alhamdulillah persalinan normal lancar minim trauma!"
+    comment: "Alhamdulillah Bagus Pelayanannya, obat nya juga gk kalah sama dokter",
+    quote: "Alhamdulillah Bagus Pelayanannya, obat nya juga gk kalah sama dokter"
   },
   {
     id: 2,

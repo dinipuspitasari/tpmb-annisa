@@ -36,45 +36,54 @@ export default function ReservationForm({ preselectedServiceId, preselectedMidwi
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const selectedService = servicesData.find((s) => s.id === formData.serviceId);
-    const selectedMidwife = midwivesData.find((m) => m.id === formData.midwifeId);
-    const ticketId = 'TPMB-' + Math.floor(100000 + Math.random() * 900000);
+  const selectedService = servicesData.find(
+    (service) => service.id === formData.serviceId
+  );
 
-    const confirmation = {
-      ticketId,
-      ...formData,
-      serviceName: selectedService ? selectedService.title : formData.serviceId,
-      midwifeName: selectedMidwife ? selectedMidwife.name : 'Bidan Jaga TPMB',
-      createdAt: new Date().toLocaleString('id-ID')
-    };
+  const selectedMidwife = midwivesData.find(
+    (midwife) => midwife.id === formData.midwifeId
+  );
 
-    setBookingSuccess(confirmation);
+  const serviceName = selectedService
+    ? selectedService.title
+    : formData.serviceId;
 
-    // Format WhatsApp message
-    const waText = encodeURIComponent(
-      `*Halo TPMB ANNISA LL*, saya ingin konfirmasi janji temu reservasi klinik:\n\n` +
-      `*No. Tiket:* ${ticketId}\n` +
-      `*Nama Bunda:* ${formData.patientName}\n` +
-      `*No. WhatsApp:* ${formData.phone}\n` +
-      `*Layanan:* ${confirmation.serviceName}\n` +
-      `*Bidan Pilihan:* ${confirmation.midwifeName}\n` +
-      `*Rencana Tanggal:* ${formData.date || 'Segera'}\n` +
-      `*Sesi Waktu:* ${formData.timeSlot}\n` +
-      `*Peserta BPJS:* ${formData.isBpjs ? 'Ya (Bawa KIS/KTP)' : 'Umum / Mandiri'}\n` +
-      `*Catatan/Keluhan:* ${formData.notes || '-'}\n\n` +
-      `Mohon info konfirmasi antrean dan kelengkapan yang perlu dibawa. Terima kasih!`
-    );
+  const midwifeName = selectedMidwife
+    ? selectedMidwife.name
+    : 'Bidan Jaga TPMB';
 
-    const waUrl = `https://wa.me/${clinicInfo.whatsapp}?text=${waText}`;
+  const waText = encodeURIComponent(
+    `Halo TPMB ANNISA LL, saya ingin melakukan reservasi pelayanan.
 
-    // Auto open WhatsApp on mobile or new tab
-    setTimeout(() => {
-      window.open(waUrl, '_blank');
-    }, 1200);
-  };
+*Data Pasien*
+Nama: ${formData.patientName}
+No. WhatsApp: ${formData.phone}
+
+*Detail Reservasi*
+Layanan: ${serviceName}
+Bidan: ${midwifeName}
+Tanggal: ${formData.date}
+Sesi: ${formData.timeSlot}
+
+*Status Pembayaran*
+${formData.isBpjs ? 'BPJS Kesehatan' : 'Umum / Mandiri'}
+
+*Catatan / Keluhan*
+${formData.notes || '-'}
+
+Mohon informasi mengenai konfirmasi jadwal dan persyaratan yang perlu saya bawa.
+
+Terima kasih.`
+  );
+
+  const waUrl = `https://wa.me/${clinicInfo.whatsapp}?text=${waText}`;
+
+  // Langsung buka WhatsApp
+  window.location.href = waUrl;
+};
 
   return (
     <div className="w-full">
