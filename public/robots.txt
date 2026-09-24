@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tpmb-annisa-ll.id/sitemap.xml

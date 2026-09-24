@@ -1,0 +1,6 @@
+{
+  "name": "TPMB ANNISA LL - Sahabat Ibu & Buah Hati",
+  "description": "Tempat Praktik Mandiri Bidan TPMB ANNISA LL. Pelayanan kehamilan, persalinan gentle birth 24 jam, nifas, bayi baru lahir, imunisasi, MTBS, konseling laktasi, dan KB dengan fasilitas privat ramah keluarga.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
