@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tpmb-annisa-ll.id/sitemap.xml
+Sitemap: https://tpmb-annisa-ll.netlify.app/sitemap.xml
