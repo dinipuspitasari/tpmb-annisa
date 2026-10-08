@@ -9,7 +9,13 @@ import FacilitiesPreview from '../components/home/FacilitiesPreview.jsx';
 import ReviewsPreview from '../components/home/ReviewsPreview.jsx';
 import ReservationCTA from '../components/home/ReservationCTA.jsx';
 
-export default function Home({ onNavigate, onSelectServiceForBooking, onSelectMidwifeForBooking }) {
+export default function Home({
+  onNavigate,
+  onSelectServiceForBooking,
+  onSelectMidwifeForBooking,
+  onSelectServiceForDetail,
+  onSelectFacilityForDetail,
+}) {
   return (
     <div className="w-full">
       <SEO
@@ -30,11 +36,14 @@ export default function Home({ onNavigate, onSelectServiceForBooking, onSelectMi
       {/* About Preview */}
       <AboutSection onLearnMore={() => onNavigate('about')} />
 
-      {/* Services Preview (6 cards) */}
+      {/* Services Preview (cards with only image & service name) */}
       <ServicesPreview
         onSelectService={(service) => {
-          if (onSelectServiceForBooking) onSelectServiceForBooking(service);
-          onNavigate('reservation');
+          if (onSelectServiceForDetail) {
+            onSelectServiceForDetail(service);
+          } else {
+            onNavigate('services');
+          }
         }}
         onViewAllServices={() => onNavigate('services')}
       />
@@ -47,9 +56,15 @@ export default function Home({ onNavigate, onSelectServiceForBooking, onSelectMi
         }}
       /> */}
 
-      {/* Facilities Preview */}
+      {/* Facilities Preview (cards with only image & facility name) */}
       <FacilitiesPreview
-        onBookTour={() => onNavigate('reservation')}
+        onOpenFacilityDetail={(facility) => {
+          if (onSelectFacilityForDetail) {
+            onSelectFacilityForDetail(facility);
+          } else {
+            onNavigate('facilities');
+          }
+        }}
         onViewAllFacilities={() => onNavigate('facilities')}
       />
 

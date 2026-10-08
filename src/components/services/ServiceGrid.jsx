@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { servicesData } from '../../data/clinic.js';
 import ServiceCard from './ServiceCard.jsx';
 
-export default function ServiceGrid({ onSelectService, initialCategory = 'Semua' }) {
+export default function ServiceGrid({
+  onSelectService,
+  initialCategory = 'Semua',
+  initialServiceDetail = null,
+  onClearServiceDetail,
+}) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState('');
-  const [detailModalService, setDetailModalService] = useState(null);
+  const [detailModalService, setDetailModalService] = useState(initialServiceDetail);
+
+  useEffect(() => {
+    if (initialServiceDetail) {
+      setDetailModalService(initialServiceDetail);
+    }
+  }, [initialServiceDetail]);
+
+  const handleCloseModal = () => {
+    setDetailModalService(null);
+    if (onClearServiceDetail) {
+      onClearServiceDetail();
+    }
+  };
 
   const categories = ['Semua', 'Maternal', 'Anak', 'Laktasi', 'Reproduksi', 'Tindakan Medis'];
 
@@ -97,18 +115,35 @@ export default function ServiceGrid({ onSelectService, initialCategory = 'Semua'
 
       {/* Service Detail Modal */}
       {detailModalService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/45 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-surface-container-lowest max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/40 relative max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="bg-surface-container-lowest max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/40 relative max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
-              onClick={() => setDetailModalService(null)}
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors"
+              onClick={handleCloseModal}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors z-10"
             >
               ✕
             </button>
 
+            {/* Modal Image */}
+            {detailModalService.image && (
+              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-5 bg-surface-container -mt-1 shadow-xs">
+                <img
+                  src={detailModalService.image}
+                  alt={detailModalService.title || detailModalService.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+
             <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 rounded-2xl ${detailModalService.iconBg} flex items-center justify-center`}>
+              <div className={`w-12 h-12 rounded-2xl ${detailModalService.iconBg} flex items-center justify-center flex-shrink-0`}>
                 <span className="material-symbols-outlined text-[28px]">
                   {detailModalService.icon}
                 </span>
@@ -118,13 +153,13 @@ export default function ServiceGrid({ onSelectService, initialCategory = 'Semua'
                   Kategori: {detailModalService.category}
                 </span>
                 <h3 className="text-lg font-bold text-on-surface leading-tight">
-                  {detailModalService.title}
+                  {detailModalService.title || detailModalService.name}
                 </h3>
               </div>
             </div>
 
             <p className="text-sm text-on-surface-variant leading-relaxed mb-5">
-              {detailModalService.fullDesc}
+              {detailModalService.fullDesc || detailModalService.shortDesc}
             </p>
 
             <div className="mb-6 bg-surface-container-low p-4 rounded-2xl border border-outline-variant/20">
@@ -148,7 +183,7 @@ export default function ServiceGrid({ onSelectService, initialCategory = 'Semua'
                 type="button"
                 onClick={() => {
                   const srv = detailModalService;
-                  setDetailModalService(null);
+                  handleCloseModal();
                   handleSelect(srv);
                 }}
                 className="flex-1 py-3 px-4 rounded-full bg-tertiary text-on-tertiary font-label-md font-bold hover:bg-tertiary/90 transition-all flex items-center justify-center gap-2 shadow-md"
@@ -158,7 +193,7 @@ export default function ServiceGrid({ onSelectService, initialCategory = 'Semua'
               </button>
               <button
                 type="button"
-                onClick={() => setDetailModalService(null)}
+                onClick={handleCloseModal}
                 className="py-3 px-5 rounded-full bg-surface-container-high text-on-surface font-label-md font-semibold hover:bg-surface-container-highest transition-colors"
               >
                 Tutup

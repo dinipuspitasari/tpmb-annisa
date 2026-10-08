@@ -3,7 +3,12 @@ import SEO from '../components/common/SEO.jsx';
 import SectionHeader from '../components/common/SectionHeader.jsx';
 import ServiceGrid from '../components/services/ServiceGrid.jsx';
 
-export default function Services({ onSelectService, onNavigate }) {
+export default function Services({
+  onSelectService,
+  onNavigate,
+  initialServiceDetail,
+  onClearServiceDetail,
+}) {
   return (
     <div className="pt-28 pb-20 bg-surface">
       <SEO
@@ -27,6 +32,8 @@ export default function Services({ onSelectService, onNavigate }) {
 
         {/* 11 Services Grid with Filter & Search */}
         <ServiceGrid
+          initialServiceDetail={initialServiceDetail}
+          onClearServiceDetail={onClearServiceDetail}
           onSelectService={(service) => {
             if (onSelectService) {
               onSelectService(service);

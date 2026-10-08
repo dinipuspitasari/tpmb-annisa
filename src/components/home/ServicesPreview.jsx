@@ -1,11 +1,9 @@
 import React from 'react';
 import SectionHeader from '../common/SectionHeader.jsx';
-import ServiceCard from '../services/ServiceCard.jsx';
 import { servicesData } from '../../data/clinic.js';
 
 export default function ServicesPreview({ onSelectService, onViewAllServices }) {
-  // Show 6 featured services on home page
-  const featuredServices = (servicesData || []).slice(0, 6);
+  const allServices = servicesData || [];
 
   return (
     <section className="py-16 lg:py-24 bg-surface-container-low">
@@ -16,28 +14,53 @@ export default function ServicesPreview({ onSelectService, onViewAllServices }) 
           <SectionHeader
             badge="11 Layanan Kebidanan Terpadu"
             badgeIcon="vital_signs"
-            title="Asuhan Medis Menyeluruh untuk Bunda &amp; Balita"
-            subtitle="Mulai dari pemeriksaan antenatal berkala, persalinan gentle birth 24 jam, pemulihan nifas, imunisasi, hingga konseling reproduksi."
+            title="Layanan Medis TPMB ANNISA LL"
+            subtitle="Pilihan asuhan kebidanan menyeluruh bagi Bunda dan buah hati. Klik layanan untuk melihat rincian lengkap &amp; prosedur di halaman Layanan."
           />
           <button
             type="button"
             onClick={onViewAllServices}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-lowest text-primary font-label-md font-bold border border-outline-variant/30 hover:bg-surface-container-high transition-colors shadow-2xs self-start md:self-auto"
           >
-            <span>Lihat Semua 11 Layanan</span>
+            <span>Halaman Layanan Lengkap</span>
             <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
           </button>
         </div>
 
-        {/* 6 Featured Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(featuredServices || []).map((service) => (
-            <ServiceCard
+        {/* Services Grid: Only Image & Service Name */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {allServices.map((service) => (
+            <div
               key={service.id}
-              service={service}
-              onSelectService={onSelectService}
-              onOpenDetail={(srv) => onSelectService(srv)}
-            />
+              onClick={() => onSelectService && onSelectService(service)}
+              className="group cursor-pointer bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 hover:border-primary/50 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col hover:-translate-y-1"
+            >
+              {/* Gambar Layanan */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-container">
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                  <span className="text-white text-xs font-semibold flex items-center gap-1">
+                    <span>Lihat Detail</span>
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Nama Layanan */}
+              <div className="p-4 flex items-center justify-between gap-2 flex-1">
+                <h3 className="font-semibold text-sm sm:text-base text-on-surface group-hover:text-primary transition-colors">
+                  {service.name}
+                </h3>
+                <span className="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -49,10 +72,10 @@ export default function ServicesPreview({ onSelectService, onViewAllServices }) 
             </span>
             <div>
               <p className="text-sm font-bold text-on-secondary-container">
-                Butuh Layanan Khusus atau Tindakan Darurat?
+                Ingin Mengetahui Detail &amp; Prosedur Setiap Layanan?
               </p>
               <p className="text-xs text-secondary">
-                Pelayanan gawat darurat bersalin, pecah ketuban, dan rujukan ambulance siaga 24 jam.
+                Buka halaman Layanan untuk panduan lengkap, cakupan asuhan medis, dan reservasi tindakan.
               </p>
             </div>
           </div>
@@ -61,7 +84,7 @@ export default function ServicesPreview({ onSelectService, onViewAllServices }) 
             onClick={onViewAllServices}
             className="px-5 py-2.5 rounded-full bg-secondary text-on-secondary text-xs font-bold hover:bg-secondary/90 transition-colors flex-shrink-0"
           >
-            Pelajari Semua Layanan
+            Buka Halaman Layanan
           </button>
         </div>
 

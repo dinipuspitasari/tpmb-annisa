@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { facilitiesData } from '../../data/clinic.js';
 import FacilityCard from './FacilityCard.jsx';
 
-export default function FacilityGrid({ onBookTour }) {
-  const [activeFacility, setActiveFacility] = useState(null);
+export default function FacilityGrid({
+  onBookTour,
+  initialFacilityDetail = null,
+  onClearFacilityDetail,
+}) {
+  const [activeFacility, setActiveFacility] = useState(initialFacilityDetail);
+
+  useEffect(() => {
+    if (initialFacilityDetail) {
+      setActiveFacility(initialFacilityDetail);
+    }
+  }, [initialFacilityDetail]);
+
+  const handleCloseModal = () => {
+    setActiveFacility(null);
+    if (onClearFacilityDetail) {
+      onClearFacilityDetail();
+    }
+  };
 
   return (
     <div className="w-full">
@@ -19,11 +36,17 @@ export default function FacilityGrid({ onBookTour }) {
 
       {/* Facility Lightbox Modal */}
       {activeFacility && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/55 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-surface-container-lowest max-w-xl w-full rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/40 relative max-h-[92vh] flex flex-col">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/55 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="bg-surface-container-lowest max-w-xl w-full rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/40 relative max-h-[92vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
-              onClick={() => setActiveFacility(null)}
+              onClick={handleCloseModal}
               className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
             >
               ✕
@@ -75,7 +98,7 @@ export default function FacilityGrid({ onBookTour }) {
                 <button
                   type="button"
                   onClick={() => {
-                    setActiveFacility(null);
+                    handleCloseModal();
                     if (onBookTour) onBookTour();
                   }}
                   className="flex-1 py-3 rounded-full bg-secondary text-on-secondary font-label-md font-bold hover:bg-secondary/90 transition-all flex items-center justify-center gap-2 shadow-xs"
@@ -85,7 +108,7 @@ export default function FacilityGrid({ onBookTour }) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setActiveFacility(null)}
+                  onClick={handleCloseModal}
                   className="py-3 px-5 rounded-full bg-surface-container-high text-on-surface font-label-md font-semibold hover:bg-surface-container-highest transition-colors"
                 >
                   Tutup

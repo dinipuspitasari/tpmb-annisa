@@ -28,8 +28,8 @@ export default function Footer({ onNavigate }) {
           {/* Column 1: Brand & Accreditation */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-primary-fixed/60 flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined text-[20px]">favorite</span>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-primary">
+                <img src="/images/logo.png" alt="Logo TPMB ANNISA LL" className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-105" />
               </div>
               <div className="flex flex-col">
                 <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">

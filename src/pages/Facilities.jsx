@@ -3,7 +3,11 @@ import SEO from '../components/common/SEO.jsx';
 import SectionHeader from '../components/common/SectionHeader.jsx';
 import FacilityGrid from '../components/facilities/FacilityGrid.jsx';
 
-export default function Facilities({ onNavigate }) {
+export default function Facilities({
+  onNavigate,
+  initialFacilityDetail,
+  onClearFacilityDetail,
+}) {
   return (
     <div className="pt-28 pb-20 bg-surface">
       <SEO
@@ -26,7 +30,11 @@ export default function Facilities({ onNavigate }) {
         </div>
 
         {/* 4 Facilities Grid */}
-        <FacilityGrid onBookTour={() => onNavigate('reservation')} />
+        <FacilityGrid
+          onBookTour={() => onNavigate('reservation')}
+          initialFacilityDetail={initialFacilityDetail}
+          onClearFacilityDetail={onClearFacilityDetail}
+        />
 
         {/* Hygiene & Comfort Commitment */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">

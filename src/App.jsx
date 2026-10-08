@@ -21,6 +21,8 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(getPageFromHash);
   const [selectedServiceId, setSelectedServiceId] = useState(null);
   const [selectedMidwifeId, setSelectedMidwifeId] = useState(null);
+  const [selectedServiceDetail, setSelectedServiceDetail] = useState(null);
+  const [selectedFacilityDetail, setSelectedFacilityDetail] = useState(null);
 
   // Listen to hash changes (back/forward browser buttons)
   useEffect(() => {
@@ -38,6 +40,16 @@ export default function App() {
     setCurrentPage(pageId);
     window.location.hash = pageId === 'home' ? '' : pageId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenServiceDetail = (service) => {
+    setSelectedServiceDetail(service);
+    navigateTo('services');
+  };
+
+  const handleOpenFacilityDetail = (facility) => {
+    setSelectedFacilityDetail(facility);
+    navigateTo('facilities');
   };
 
   const handleSelectServiceForBooking = (service) => {
@@ -66,6 +78,8 @@ export default function App() {
             onNavigate={navigateTo}
             onSelectServiceForBooking={handleSelectServiceForBooking}
             onSelectMidwifeForBooking={handleSelectMidwifeForBooking}
+            onSelectServiceForDetail={handleOpenServiceDetail}
+            onSelectFacilityForDetail={handleOpenFacilityDetail}
           />
         )}
 
@@ -73,6 +87,8 @@ export default function App() {
 
         {currentPage === 'services' && (
           <Services
+            initialServiceDetail={selectedServiceDetail}
+            onClearServiceDetail={() => setSelectedServiceDetail(null)}
             onSelectService={handleSelectServiceForBooking}
             onNavigate={navigateTo}
           />
@@ -85,7 +101,13 @@ export default function App() {
           />
         )}
 
-        {currentPage === 'facilities' && <Facilities onNavigate={navigateTo} />}
+        {currentPage === 'facilities' && (
+          <Facilities
+            initialFacilityDetail={selectedFacilityDetail}
+            onClearFacilityDetail={() => setSelectedFacilityDetail(null)}
+            onNavigate={navigateTo}
+          />
+        )}
 
         {currentPage === 'reviews' && <Reviews onNavigate={navigateTo} />}
 

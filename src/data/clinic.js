@@ -10,12 +10,12 @@ export const clinicInfo = {
   legalName: "Tempat Praktik Mandiri Bidan (TPMB) Annisa LL",
   licenseNumber: "503/SIPB-449/IBI/2023",
   accreditation: "Terakreditasi Paripurna & Mitra Resmi IBI",
-  phone: "085156167918",
-  phoneFormatted: "(0851) 5616-7918",
-  whatsapp: "6285156167918",
+  phone: "081243685322",
+  phoneFormatted: "(0812) 4368-5322",
+  whatsapp: "6281243685322",
   hotline: "0812-GENTLE-CARE",
-  address: "Dsn, Jl. Tegal Asem, RT.11/RW.05, Kertasari, Kec. R.Dengklok, Karawang, Jawa Barat 41352",
-  mapsQuery: "https://maps.app.goo.gl/EvRaxeApnyFQqYcZ9",
+  address: "Jl. Melati Harapan No. 42, Kebayoran Baru, Jakarta Selatan (Dekat Taman Melati Asri)",
+  mapsQuery: "https://maps.google.com/?q=Kebayoran+Baru+Jakarta+Selatan",
   heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9vbmBP_3JtX-pt6ENyOgf68LdiLGleXhMbMzZwSe8XZFvPBjb1mpt4my4etv3RAwtr54UD_-s1vxLN3dqi74E6h0MnWRh20rB18lWN-G3alw9tf9TQMmmcgs2xXnheSrJVOJ4PCmXzzw6WLNHAbjS8ttIVYvmM5nbdPL9DJZYqWtk-7VswXYoCnU7Q4k3Ray6pzOCH61fPPzjYG1CuvCtolwiDMZkGn2NRFJ7GP_EJ51hlWkV9NCUSw",
   logoUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VT9GrqdupOf-ekW-2EyE7gWQOLF0Hfs3bzZLSaUORBUj84CrOyxSl-lYl5LEig1R2PcZ3i562QZRqb01ubz6Z5AyYjjFD9tgg4uQBdTqY-8TCd89fFNT7OOfTHydW4ng-DW_qQhtwXMsCG1tVJ8L57zZQ6yh9kx0MZMuZPXDKvMbg1LkqDtWRkE6wFLtnZkQ0LvbNrfcGy609gNjzr5Wf6qdKEZI6Q4N3MbhWR9M3qSausux61JFAWHXSr",
   hours: [
@@ -54,6 +54,15 @@ export const statsData = [
     description: "S.Tr.Keb & Bdn berpengalaman",
     color: "tertiary"
   },
+  // {
+  //   id: 4,
+  //   icon: "health_and_safety",
+  //   value: "BPJS",
+  //   number: "BPJS",
+  //   label: "Mitra Faskes Resmi",
+  //   description: "Klaim asuransi mudah & transparan",
+  //   color: "primary"
+  // }
 ];
 
 export const highlights = statsData;
@@ -67,6 +76,7 @@ export const servicesData = [
     tag: "Rutin Kehamilan",
     icon: "pregnant_woman",
     category: "Maternal",
+    image: "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Pemantauan detak jantung janin (Doppler), tensi darah berkala, skrining laboratorium rutin, dan konseling gizi nutrisi ibu hamil secara terpadu.",
     fullDesc: "Program Antenatal Care (ANC) terpadu berstandar 10T Kemenkes. Dilengkapi USG screening, cek lab rutin darah dan urin, pengukuran tinggi fundus uteri, suplementasi zat besi & asam folat, serta deteksi dini resiko tinggi kehamilan dengan pendekatan ramah emosional ibu.",
     features: [
@@ -86,6 +96,7 @@ export const servicesData = [
     tag: "Prioritas Utama",
     icon: "water",
     category: "Maternal",
+    image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Metode gentle birth alami, opsi relaksasi aromaterapi, pendampingan doula atau bidan 1-on-1, serta terapi hypnobirthing untuk minim nyeri.",
     fullDesc: "Pelayanan persalinan 24 jam dengan filosofi Gentle Birth. Kami memfasilitasi persalinan alami tanpa intervensi yang tidak perlu, kebebasan memilih posisi melahirkan, pemotongan tali pusat secara gentle (lotus/delayed cord clamping), dan Inisiasi Menyusu Dini (IMD) segera setelah lahir.",
     features: [
@@ -105,6 +116,7 @@ export const servicesData = [
     tag: "Pemulihan Bunda",
     icon: "favorite",
     category: "Maternal",
+    image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Pemantauan involusi rahim, pengeluaran lochea, perawatan luka perineum/SC, serta edukasi pemulihan stamina mental dan fisik ibu nifas.",
     fullDesc: "Masa nifas (puerperium) adalah periode krusial pemulihan bunda. Bidan kami mendampingi pemeriksaan fisik berkala (TTV, TFU, perineum), evaluasi tanda bahaya masa nifas, konseling 'baby blues', serta asuhan pijat relaksasi pascasalin.",
     features: [
@@ -124,6 +136,7 @@ export const servicesData = [
     tag: "Neonatus Sehat",
     icon: "child_friendly",
     category: "Anak",
+    image: "https://images.unsplash.com/photo-1505377059067-e285a7bac49b?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Pemeriksaan vital bayi, suntik Vitamin K1, salep mata antibiotik profilaksis, imunisasi Hepatitis B0, dan perawatan tali pusat steril.",
     fullDesc: "Asuhan esensial bayi baru lahir berstandar medis tinggi. Meliputi penilaian APGAR score, menjaga kehangatan bayi (Kangaroo Mother Care), skrining kelainan kongenital dini, serta bimbingan kepada orang tua baru dalam memandikan dan merawat si kecil.",
     features: [
@@ -143,6 +156,7 @@ export const servicesData = [
     tag: "Kesehatan Anak",
     icon: "vaccines",
     category: "Anak",
+    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Vaksinasi wajib dasar & lanjutan lengkap rekomendasi IDAI, pemantauan kurva KMS WHO, serta konsultasi stimulasi sensorik dan motorik anak.",
     fullDesc: "Layanan imunisasi komprehensif dengan rantai dingin (cold chain vaccine) bersertifikasi untuk menjaga potensi vaksin. Kami juga menyediakan evaluasi rutin buku KIA/KMS untuk mendeteksi stunting atau keterlambatan milestone bicara/motorik.",
     features: [
@@ -162,6 +176,7 @@ export const servicesData = [
     tag: "Pediatrik Triage",
     icon: "medical_information",
     category: "Anak",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Pendekatan terpadu penanganan batuk, demam, diare, masalah telinga, dan malnutrisi pada balita sesuai panduan resmi Kemenkes & WHO.",
     fullDesc: "Layanan penanganan kuratif dan promotif bagi anak usia 0-5 tahun dengan algoritma MTBS terstandarisasi. Memastikan balita yang sakit mendapatkan terapi tepat sasaran tanpa penggunaan antibiotik berlebih, serta sistem rujukan sigap bila terdapat tanda bahaya umum.",
     features: [
@@ -181,6 +196,7 @@ export const servicesData = [
     tag: "ASI Sukses",
     icon: "support_agent",
     category: "Laktasi",
+    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Solusi pelekatan tanpa nyeri, penanganan payudara bengkak/mastitis, pijat relaksasi oksitosin, dan manajemen ASI perah bagi ibu bekerja.",
     fullDesc: "Bimbingan langsung oleh konselor laktasi tersertifikasi IBI. Kami membantu mengurai hambatan menyusui seperti puting lecet/datar, bingung puting, suplai ASI yang dirasa kurang, serta teknik memerah dan menyimpan ASI eksklusif 6 bulan.",
     features: [
@@ -200,6 +216,7 @@ export const servicesData = [
     tag: "Perencanaan Keluarga",
     icon: "family_restroom",
     category: "Reproduksi",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Pemasangan dan pelepasan IUD (Spiral), Implan/Susuk, KB Suntik 1 & 3 Bulan, Pil KB laktasi, dan konseling pemilihan kontrasepsi yang aman.",
     fullDesc: "Konsultasi ramah dan privat mengenai perencanaan jarak kehamilan yang aman bagi kesehatan bunda. Dilakukan oleh bidan bersertifikat CTU (Contraceptive Technology Update) dengan sterilisasi instrumen tingkat tinggi.",
     features: [
@@ -219,6 +236,7 @@ export const servicesData = [
     tag: "Kesehatan Wanita",
     icon: "health_and_safety",
     category: "Reproduksi",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Skrining kesehatan pranikah (catin), konsultasi siklus haid tidak teratur, keputihan abnormal, infeksi saluran kemih, dan edukasi organ reproduksi.",
     fullDesc: "Ruang konsultasi aman dan nyaman bagi remaja putri, calon pengantin, hingga wanita usia subur untuk mendiskusikan berbagai keluhan reproduksi secara konfidensial dan ilmiah.",
     features: [
@@ -238,6 +256,7 @@ export const servicesData = [
     tag: "Steril & Cepat Sembuh",
     icon: "healing",
     category: "Tindakan Medis",
+    image: "https://images.unsplash.com/photo-1583912267670-6575ad472688?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Ganti balutan steril pasca operasi Caesar, perawatan luka jahitan robekan perineum, dan penanganan luka infeksi ringan dengan teknik modern dressing.",
     fullDesc: "Tindakan perawatan luka profesional dengan standar aseptic technique dan prinsip moist wound healing untuk mempercepat regenerasi epitel jaringan kulit, meminimalkan jaringan parut/bekas luka, dan mencegah infeksi sekunder.",
     features: [
@@ -257,6 +276,7 @@ export const servicesData = [
     tag: "Pernapasan Lega",
     icon: "air",
     category: "Anak",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
     shortDesc: "Terapi inhalasi uap untuk mengencerkan dahak batuk, melegakan saluran napas balita, serta mengatasi sesak/mengi dengan suasana tidak menakutkan.",
     fullDesc: "Pelayanan nebulasi dengan alat modern silent compressor dan masker silikon pediatrik berkarakter lucu. Membantu si kecil bernapas plong saat terserang flu berat, bronkitis, atau serangan asma ringan di bawah observasi langsung bidan.",
     features: [
@@ -352,7 +372,7 @@ export const midwivesData = [
 export const reviewsData = [
   {
     id: 1,
-    name: "Khivi 48",
+    name: "Bunda Dian Kartika",
     role: "Gentle Birth Normal • Baby Arkan",
     serviceTag: "Gentle Birth",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
@@ -360,8 +380,8 @@ export const reviewsData = [
     avatarBg: "bg-primary-container text-on-primary",
     rating: 5,
     date: "12 Januari 2025",
-    comment: "Alhamdulillah Bagus Pelayanannya, obat nya juga gk kalah sama dokter",
-    quote: "Alhamdulillah Bagus Pelayanannya, obat nya juga gk kalah sama dokter"
+    comment: "Awalnya saya takut luar biasa membayangkan proses melahirkan anak pertama. Tapi Bidan di TPMB Annisa LL benar-benar telaten membimbing nafas dan hypnobirthing. Ruangannya sangat tenang, wangi aromaterapi, dan suami boleh mendampingi penuh tanpa rasa panik. Alhamdulillah persalinan normal lancar minim trauma!",
+    quote: "Awalnya saya takut luar biasa membayangkan proses melahirkan anak pertama. Tapi Bidan di TPMB Annisa LL benar-benar telaten membimbing nafas dan hypnobirthing. Ruangannya sangat tenang, wangi aromaterapi, dan suami boleh mendampingi penuh tanpa rasa panik. Alhamdulillah persalinan normal lancar minim trauma!"
   },
   {
     id: 2,
