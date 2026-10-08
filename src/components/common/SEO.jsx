@@ -33,7 +33,7 @@ export default function SEO({
 
     const canonicalUrl = typeof window !== 'undefined'
       ? `${window.location.origin}${window.location.pathname}${path.startsWith('/') ? path : '/' + path}`
-      : `https://tpmb-annisa-ll.id${path}`;
+      : `https://tpmb-annisa-ll.netlify.app${path}`;
     setMeta('property', 'og:url', canonicalUrl);
 
     // 4. Twitter Tags
