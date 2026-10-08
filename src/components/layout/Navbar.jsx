@@ -17,7 +17,7 @@ export default function Navbar({ currentPage, onNavigate }) {
     { id: 'home', label: 'Beranda' },
     { id: 'about', label: 'Tentang Kami' },
     { id: 'services', label: 'Layanan' },
-    { id: 'midwife', label: 'Tim Bidan' },
+    // { id: 'midwife', label: 'Tim Bidan' },
     { id: 'facilities', label: 'Fasilitas' },
     { id: 'reviews', label: 'Testimoni' },
     { id: 'contact', label: 'Kontak' }
